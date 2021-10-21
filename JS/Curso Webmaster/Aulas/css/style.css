@@ -1,0 +1,21 @@
+/*
+h1 {
+    color: red;
+}
+*/
+
+/* 
+#div1 > h1 {
+    color: red;
+}
+#div2 > h1 {
+    color: orange;
+} 
+*/
+.div1 h1 {
+    color: red;
+}
+.div2 h1 {
+    color: orange;
+}
+

@@ -1,0 +1,13 @@
+/****************************************************
+ * malloc 	- Alloc memory							*
+ * free		- Free allocated memory					*
+ ****************************************************/
+#include <stdio.h>
+
+int main () {
+
+/*	Static Allocation */
+const int array_size 10;
+int array[array_size];
+	return (0);
+}

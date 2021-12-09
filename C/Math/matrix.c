@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include "matrix.h"
 
+/*
 int matrix_columns(float **array) {
 	return (sizeof(array[0]) / sizeof(float));
 }
@@ -14,3 +16,4 @@ int same_order_matrices(float **array1, float **array2) {
 		return (1);
 	return (0);
 }
+*/

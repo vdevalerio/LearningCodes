@@ -1,19 +1,13 @@
 #include <stdio.h>
+#include <stdarg.h>
 #include "matrix.h"
 
-/*
-int matrix_columns(float **array) {
-	return (sizeof(array[0]) / sizeof(float));
+void print_matrix(int row, int column, float *array) {
+	for(size_t i = 0; i < row; ++i) {
+		printf("| ");
+		for(size_t j = 0; j < column; ++j) {
+			printf("%.1f ", array[j + (column * i)]);
+		}
+		printf("|\n");
+	}
 }
-
-int matrix_rows(float **array) {
-	return ((sizeof(array) / sizeof(float)) / get_columns);
-}
-
-int same_order_matrices(float **array1, float **array2) {
-	if((get_columns(array1) == get_columns(array2)) \
-		&& (get_rows(array1) == get_rows(array2)))
-		return (1);
-	return (0);
-}
-*/

@@ -5,17 +5,17 @@
 #define ROWS 3
 #define COLUMNS 5
 
-#define SWAP_TEST
+#define TESTING_SWAP
 
 int main ()
 {
 	float array[ROWS][COLUMNS] = {
 			{1, 2, 3, 4, 5},
-			{5, 6, 7, 8, 9},
-			{3, 4, 5, 6, 7} };
+			{0, 0, 7, 8, 9},
+			{0, 4, 5, 6, 7} };
 	float *array_pointer = &array[0][0];
 	
-#ifdef SWAP_TEST
+#ifdef TESTING_SWAP
 	printf("Original Matrix:\n");
 	print_matrix(ROWS, COLUMNS, array_pointer);
 
@@ -23,7 +23,7 @@ int main ()
 
 	printf("Swapped Matrix:\n");
 	print_matrix(ROWS, COLUMNS, array_pointer);
-#endif /* SWAP_TEST */
-	
+#endif /* TESTING_SWAP */
+
 	return (0);
 }

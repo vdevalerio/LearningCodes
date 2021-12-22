@@ -12,8 +12,8 @@ void print_matrix(int rows, int columns, float *array) {
 	}
 }
 
-void swap_rows(int rows, int columns, int upper_row,\
-				int lower_row, float* array) {
+void swap_rows(int rows, int columns, float* array,\
+				int upper_row, int lower_row) {
 	float temporary[columns];
 		
 	for(size_t j = 0; j < columns; ++j) {

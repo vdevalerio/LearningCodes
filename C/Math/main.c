@@ -13,7 +13,7 @@ int main () {
 	float *array_pointer = &array[0][0];
 	printf("Original Matrix:\n");
 	print_matrix(ROWS, COLUMNS, array_pointer);
-	swap_rows(ROWS, COLUMNS, 0, 2, array_pointer);
+	swap_rows(ROWS, COLUMNS, array_pointer, 0, 2);
 	printf("Swapped Matrix:\n");
 	print_matrix(ROWS, COLUMNS, array_pointer);
 	return (0);

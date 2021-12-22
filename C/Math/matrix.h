@@ -7,3 +7,4 @@ int get_row_pivot_index(int, int, float*, int);
  * 	return -1 if the row consist of only zeros
  */ 	
 void swap_rows(int, int, float*, int, int);
+void raise_leftmost_pivot_rows(int, int, float*);

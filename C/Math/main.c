@@ -5,7 +5,7 @@
 #define ROWS 3
 #define COLUMNS 5
 
-#define TESTING_SWAP
+#define TESTING_PIVOT
 
 int main ()
 {
@@ -24,6 +24,16 @@ int main ()
 	printf("Swapped Matrix:\n");
 	print_matrix(ROWS, COLUMNS, array_pointer);
 #endif /* TESTING_SWAP */
+
+#ifdef TESTING_PIVOT
+	printf("Matrix:\n");
+	print_matrix(ROWS, COLUMNS, array_pointer);
+	for(size_t i = 0; i < ROWS; ++i)
+	{
+		int pivot = get_row_pivot_index(ROWS, COLUMNS, array_pointer, i);
+		printf("%d\n", pivot);
+	}
+#endif /* TESTING_PIVOT */
 
 	return (0);
 }

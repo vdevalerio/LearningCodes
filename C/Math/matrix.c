@@ -15,6 +15,15 @@ void print_matrix(int rows, int columns, float *array)
 	}
 }
 
+int get_row_pivot_index(int rows, int columns, float *array, int row)
+{
+	for(size_t i = 0; i < columns; ++i)
+	{
+		if(array[(row * columns) + i] != 0)
+			return ((row * columns) + i);
+	}
+}
+
 void swap_rows(int rows, int columns, float* array,\
 				int upper_row, int lower_row)
 {

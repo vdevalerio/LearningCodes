@@ -5,14 +5,14 @@
 #define ROWS 3
 #define COLUMNS 5
 
-#define TESTING_PIVOT
+#define TESTING_RAISE_LEFTMOST_PIVOT
 
 int main ()
 {
 	float array[ROWS][COLUMNS] = {
-			{1, 2, 3, 4, 5},
-			{0, 0, 7, 8, 9},
-			{0, 4, 5, 6, 7} };
+			{0, 0, 0, 0, 1},
+			{0, 0, 3, 1, 3},
+			{1, 2, 3, 4, 5} };
 	float *array_pointer = &array[0][0];
 	
 #ifdef TESTING_SWAP
@@ -34,6 +34,16 @@ int main ()
 		printf("%d\n", pivot);
 	}
 #endif /* TESTING_PIVOT */
+
+#ifdef TESTING_RAISE_LEFTMOST_PIVOT
+	printf("Original Matrix:\n");
+	print_matrix(ROWS, COLUMNS, array_pointer);
+
+	raise_leftmost_pivot_rows(ROWS, COLUMNS, array_pointer);
+
+	printf("Raised Matrix:\n");
+	print_matrix(ROWS, COLUMNS, array_pointer);
+#endif /* TESTING_RAISE_LEFTMOST_PIVOT */
 
 	return (0);
 }

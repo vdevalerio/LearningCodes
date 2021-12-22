@@ -5,6 +5,8 @@
 #define ROWS 3
 #define COLUMNS 5
 
+#define SWAP_TEST
+
 int main ()
 {
 	float array[ROWS][COLUMNS] = {
@@ -13,6 +15,7 @@ int main ()
 			{3, 4, 5, 6, 7} };
 	float *array_pointer = &array[0][0];
 	
+#ifdef SWAP_TEST
 	printf("Original Matrix:\n");
 	print_matrix(ROWS, COLUMNS, array_pointer);
 
@@ -20,6 +23,7 @@ int main ()
 
 	printf("Swapped Matrix:\n");
 	print_matrix(ROWS, COLUMNS, array_pointer);
+#endif /* SWAP_TEST */
 	
 	return (0);
 }

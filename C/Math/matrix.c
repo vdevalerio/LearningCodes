@@ -2,10 +2,13 @@
 #include <stdarg.h>
 #include "matrix.h"
 
-void print_matrix(int rows, int columns, float *array) {
-	for(size_t i = 0; i < rows; ++i) {
+void print_matrix(int rows, int columns, float *array)
+{
+	for(size_t i = 0; i < rows; ++i)
+	{
 		printf("| ");
-		for(size_t j = 0; j < columns; ++j) {
+		for(size_t j = 0; j < columns; ++j)
+		{
 			printf("%.1f ", array[j + (columns * i)]);
 		}
 		printf("|\n");
@@ -13,7 +16,8 @@ void print_matrix(int rows, int columns, float *array) {
 }
 
 void swap_rows(int rows, int columns, float* array,\
-				int upper_row, int lower_row) {
+				int upper_row, int lower_row)
+{
 	float temporary[columns];
 		
 	for(size_t j = 0; j < columns; ++j) {

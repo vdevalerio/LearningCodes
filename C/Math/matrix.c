@@ -22,6 +22,7 @@ int get_row_pivot_index(int rows, int columns, float *array, int row)
 		if(array[(row * columns) + i] != 0)
 			return ((row * columns) + i);
 	}
+	return -1;
 }
 
 void swap_rows(int rows, int columns, float* array,\

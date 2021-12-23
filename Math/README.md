@@ -8,6 +8,7 @@
 
 #### TODOs:
 - Introduce a more friendly way to run the calculator;
+- Input and Exception Handling;
 - Bug fix (if you find any bug, please open an issue so I can fix it);
 - Matrix Transpose;
 - Matrix Addition and Subtraction;
@@ -25,6 +26,4 @@
 - Linear Systems Solution;
 - Systems Classifications;
 - Triangular Matrix;
-- Input and Exception Handling;
-
-
+- Cramer's Rule;

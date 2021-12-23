@@ -104,10 +104,17 @@ float get_elimination_factor(int rows, int columns, float *array,\
 void gaussian_elimination(int rows, int columns, float *array)
 {
 	raise_leftmost_pivot_rows(rows, columns, array);
-	float factor = get_elimination_factor(rows, columns, array, 1, 0, 0);
-	factor *= -1;
-	float auxiliary_row[columns];
-	float *auxiliary_pointer = &auxiliary_row[0];
-	multiply_row_by_nonzero(rows, columns, array, 0, factor, auxiliary_pointer);
-	add_vector_into_row(rows, columns, array, auxiliary_pointer, 1);
+
+	for(size_t i = 0; i < (columns - 1); ++i)
+	{
+		for(size_t j = i; j < (rows - 1); ++j)
+		{
+			float factor = get_elimination_factor(rows, columns, array, j + 1, i, i);
+			factor *= -1;
+			float auxiliary_row[columns];
+			float *auxiliary_pointer = &auxiliary_row[0];
+			multiply_row_by_nonzero(rows, columns, array, i, factor,  auxiliary_pointer);	
+			add_vector_into_row(rows, columns, array, auxiliary_pointer, j + 1);
+		}
+	}
 }

@@ -60,6 +60,6 @@ void multiply_row_by_nonzero(int rows, int columns, float *array,\
 {
 	for(size_t i = 0; i < columns; ++i)
 	{
-		multiplied_row[i] = array[(row * columns) + i] * factor;
+		multiplied_row[i] = array[(target_row * columns) + i] * factor;
 	}
 }

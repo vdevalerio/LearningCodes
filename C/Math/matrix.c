@@ -63,3 +63,11 @@ void multiply_row_by_nonzero(int rows, int columns, float *array,\
 		multiplied_row[i] = array[(target_row * columns) + i] * factor;
 	}
 }
+
+void add_row1_into_row2(int rows, int columns, float *array, int row1, int row2)
+{
+	for(size_t i = 0; i < columns; ++i)
+	{
+		array[(row2 * columns) + i] += array[(row1 * columns) + i];
+	}
+}

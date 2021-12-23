@@ -10,8 +10,9 @@
  *  TESTING_PIVOT
  *  TESTING_RAISE_LEFTMOST_PIVOT
  *  TESTING_MULTIPLY_ROW_BY_NONZERO
+ *  TESTING_ADD_ROW1_INTO_ROW2
  */
-#define TESTING_MULTIPLY_ROW_BY_NONZERO
+#define TESTING_ADD_ROW1_INTO_ROW2
 
 int main ()
 {
@@ -69,6 +70,17 @@ int main ()
 	printf("\n");
 
 #endif /* TESTING_MULTIPLY_ROW_BY_NONZERO */
+
+#ifdef TESTING_ADD_ROW1_INTO_ROW2
+	printf("Original Matrix:\n");
+	print_matrix(ROWS, COLUMNS, array_pointer);
+
+	add_row1_into_row2(ROWS, COLUMNS, array_pointer, 2, 0);
+
+	printf("Added Matrix:\n");
+	print_matrix(ROWS, COLUMNS, array_pointer);
+
+#endif /* TESTING_ADD_ROW1_INTO_ROW2 */
 
 	return (0);
 }

@@ -97,8 +97,9 @@ void gaussian_elimination(int rows, int columns, float *array)
 {
 	raise_leftmost_pivot_rows(rows, columns, array);
 	float factor = get_elimination_factor(rows, columns, array, 1, 0, 0);
+	factor *= -1;
 	float auxiliary_row[columns];
 	float *auxiliary_pointer = &auxiliary_row[0];
-	multiply_row_by_nonzero(rows, columns, array, 1, factor, auxiliary_pointer);
+	multiply_row_by_nonzero(rows, columns, array, 0, factor, auxiliary_pointer);
 	add_vector_into_row(rows, columns, array, auxiliary_pointer, 1);
 }

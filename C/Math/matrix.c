@@ -54,3 +54,12 @@ void raise_leftmost_pivot_rows(int rows, int columns, float *array)
 		}
 	}
 }
+
+void multiply_row_by_nonzero(int rows, int columns, float *array,\
+							int row, float factor, float *multiplied_row)
+{
+	for(size_t i = 0; i < columns; ++i)
+	{
+		multiplied_row[i] = array[(row * columns) + i] * factor;
+	}
+}

@@ -18,7 +18,3 @@ void add_vector_into_row(int rows, int columns, float* matrix,\
 float get_elimination_factor(int rows, int columns, float* matrix,\
 					int row1, int row2, int column);
 void gaussian_elimination(int rows, int columns, float* matrix);
-
-/* 	TODOs
- * 		gaussian elimination itself
- */

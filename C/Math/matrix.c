@@ -15,26 +15,26 @@ void print_matrix(int rows, int columns, float *array)
 	}
 }
 
-int get_row_pivot_index(int rows, int columns, float *array, int row)
+int get_row_pivot_index(int rows, int columns, float *array, int target_row)
 {
 	for(size_t i = 0; i < columns; ++i)
 	{
-		if(array[(row * columns) + i] != 0)
+		if(array[(target_row * columns) + i] != 0)
 			return (i + 1);
 	}
 	return -1;
 }
 
 void swap_rows(int rows, int columns, float* array,\
-				int upper_row, int lower_row)
+				int row1, int row2)
 {
 	float temporary[columns];
 		
 	for(size_t j = 0; j < columns; ++j) {
-		temporary[j] = array[(upper_row * columns) + j];
-		array[(upper_row * columns) + j] = \
-			array[(lower_row * columns) + j];
-		array[(lower_row * columns) + j] = temporary[j];
+		temporary[j] = array[(row1 * columns) + j];
+		array[(row1 * columns) + j] = \
+			array[(row2 * columns) + j];
+		array[(row2 * columns) + j] = temporary[j];
 	}
 }
 
@@ -56,7 +56,7 @@ void raise_leftmost_pivot_rows(int rows, int columns, float *array)
 }
 
 void multiply_row_by_nonzero(int rows, int columns, float *array,\
-							int row, float factor, float *multiplied_row)
+						int target_row, float factor, float *multiplied_row)
 {
 	for(size_t i = 0; i < columns; ++i)
 	{

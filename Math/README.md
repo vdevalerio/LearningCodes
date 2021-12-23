@@ -3,7 +3,7 @@
 ### What this repo is capable of
 - Gaussian Elimination;
 
-###### Note: This code doesn't verify the format or type of matrices yet.
+###### Note: This code doesn't verify the correctness (format, dimensions, size, etc.) of matrices yet.
 
 
 #### TODOs:

@@ -5,6 +5,11 @@
 #define ROWS 3
 #define COLUMNS 5
 
+/* List with all TESTING_* variables:
+ *  TESTING_SWAP
+ *  TESTING_PIVOT
+ *  TESTING_RAISE_LEFTMOST_PIVOT
+ */
 #define TESTING_RAISE_LEFTMOST_PIVOT
 
 int main ()

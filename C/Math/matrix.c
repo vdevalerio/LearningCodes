@@ -72,6 +72,16 @@ void add_row1_into_row2(int rows, int columns, float *array, int row1, int row2)
 	}
 }
 
+void add_vector_into_row(int rows, int columns, float *array,\
+				float *vector, int row)
+{
+	for(size_t i = 0; i < columns; ++i)
+	{
+		array[(row * columns) + i] += vector[i];
+	}
+
+}
+
 float get_elimination_factor(int rows, int columns, float *array,\
 					int row1, int row2, int column)
 {

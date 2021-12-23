@@ -11,10 +11,11 @@
  *  TESTING_RAISE_LEFTMOST_PIVOT
  *  TESTING_MULTIPLY_ROW_BY_NONZERO
  *  TESTING_ADD_ROW1_INTO_ROW2
+ *  TESTING_ADD_VECTOR_INTO_ROW
  *  TESTING_ELIMINATION_FACTOR
  *  TESTING_GAUSSIAN_ELIMINATION
  */
-#define TESTING_GAUSSIAN_ELIMINATION
+#define TESTING_ADD_VECTOR_INTO_ROW
 
 int main ()
 {
@@ -84,6 +85,19 @@ int main ()
 
 #endif /* TESTING_ADD_ROW1_INTO_ROW2 */
 
+#ifdef TESTING_ADD_VECTOR_INTO_ROW
+	printf("Original Matrix:\n");
+	print_matrix(ROWS, COLUMNS, array_pointer);
+
+	float vector[COLUMNS] = {1, 1, 1};
+	float *vector_pointer = &vector[0];
+
+	add_vector_into_row(ROWS, COLUMNS, array_pointer, vector_pointer, 0);
+
+	printf("Added Matrix:\n");
+	print_matrix(ROWS, COLUMNS, array_pointer);
+
+#endif /* TESTING_ADD_ROW1_INTO_ROW2 */
 #ifdef TESTING_ELIMINATION_FACTOR
 	printf("Original Matrix:\n");
 	print_matrix(ROWS, COLUMNS, array_pointer);

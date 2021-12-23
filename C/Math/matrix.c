@@ -28,13 +28,13 @@ int get_row_pivot_index(int rows, int columns, float *array, int target_row)
 void swap_rows(int rows, int columns, float* array,\
 				int row1, int row2)
 {
-	float temporary[columns];
+	float temporary;
 		
 	for(size_t j = 0; j < columns; ++j) {
-		temporary[j] = array[(row1 * columns) + j];
+		temporary = array[(row1 * columns) + j];
 		array[(row1 * columns) + j] = \
 			array[(row2 * columns) + j];
-		array[(row2 * columns) + j] = temporary[j];
+		array[(row2 * columns) + j] = temporary;
 	}
 }
 

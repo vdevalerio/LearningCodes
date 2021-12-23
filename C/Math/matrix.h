@@ -8,3 +8,10 @@ int get_row_pivot_index(int, int, float*, int);
  */ 	
 void swap_rows(int, int, float*, int, int);
 void raise_leftmost_pivot_rows(int, int, float*);
+
+/* 	TODOs
+ * 		multiply row by nonzero
+ * 		adding a multiple of one row
+ * 			to another row
+ * 		gaussian elimination itself
+ */

@@ -12,8 +12,9 @@
  *  TESTING_MULTIPLY_ROW_BY_NONZERO
  *  TESTING_ADD_ROW1_INTO_ROW2
  *  TESTING_ELIMINATION_FACTOR
+ *  TESTING_GAUSSIAN_ELIMINATION
  */
-#define TESTING_ELIMINATION_FACTOR
+#define TESTING_GAUSSIAN_ELIMINATION
 
 int main ()
 {
@@ -93,5 +94,15 @@ int main ()
 
 
 #endif /* TESTING_ELIMINATION_FACTOR */
+
+#ifdef TESTING_GAUSSIAN_ELIMINATION
+	printf("Original Matrix:\n");
+	print_matrix(ROWS, COLUMNS, array_pointer);
+
+	gaussian_elimination(ROWS, COLUMNS, array_pointer);
+
+	printf("Resultant Matrix:\n");
+	print_matrix(ROWS, COLUMNS, array_pointer);
+#endif /* TESTING_GAUSSIAN_ELIMINATION  */
 	return (0);
 }

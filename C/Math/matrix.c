@@ -82,3 +82,13 @@ float get_elimination_factor(int rows, int columns, float *array,\
 
 	return factor;
 }
+
+void gaussian_elimination(int rows, int columns, float *array)
+{
+	raise_leftmost_pivot_rows(rows, columns, array);
+	float factor = get_elimination_factor(rows, columns, array, 1, 0, 0);
+	float auxiliary_row[columns];
+	float *auxiliary_pointer = &array[rows * columns];
+	multiply_row_by_nonzero(rows, columns, array, 1, factor, auxiliary_pointer);
+	add_row1_into_row2(rows, columns, array, rows, 1);
+}

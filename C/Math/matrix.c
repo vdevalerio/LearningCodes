@@ -77,7 +77,7 @@ void add_vector_into_row(int rows, int columns, float *array,\
 {
 	for(size_t i = 0; i < columns; ++i)
 	{
-		array[(row * columns) + i] = vector[i];
+		array[(row * columns) + i] += vector[i];
 	}
 
 }

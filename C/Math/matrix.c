@@ -77,7 +77,7 @@ void add_vector_into_row(int rows, int columns, float *array,\
 {
 	for(size_t i = 0; i < columns; ++i)
 	{
-		array[(row * columns) + i] += vector[i];
+		array[(row * columns) + i] = vector[i];
 	}
 
 }
@@ -98,7 +98,7 @@ void gaussian_elimination(int rows, int columns, float *array)
 	raise_leftmost_pivot_rows(rows, columns, array);
 	float factor = get_elimination_factor(rows, columns, array, 1, 0, 0);
 	float auxiliary_row[columns];
-	float *auxiliary_pointer = &array[rows * columns];
+	float *auxiliary_pointer = &auxiliary_row[0];
 	multiply_row_by_nonzero(rows, columns, array, 1, factor, auxiliary_pointer);
-	add_row1_into_row2(rows, columns, array, rows, 1);
+	add_vector_into_row(rows, columns, array, auxiliary_pointer, 1);
 }

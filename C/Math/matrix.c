@@ -48,14 +48,14 @@ void swap_rows(int rows, int columns, float* array,\
 
 void raise_leftmost_pivot_rows(int rows, int columns, float *array)
 {
-	size_t bigger, smaller;
+	size_t upper_row_index, lower_row_index;
 	for(size_t i = 0; i < rows; ++i)
 	{
-		bigger = get_row_pivot_index(rows, columns, array, i);
+		upper_row_index = get_row_pivot_index(rows, columns, array, i);
 		for(size_t j = 0; j < rows; ++j)
 		{
-			smaller = get_row_pivot_index(rows, columns, array, j);
-			if(bigger < smaller)
+			lower_row_index = get_row_pivot_index(rows, columns, array, j);
+			if(upper_row_index < lower_row_index)
 			{
 				swap_rows(rows, columns, array, i, j);
 			}

@@ -9,8 +9,9 @@
  *  TESTING_SWAP
  *  TESTING_PIVOT
  *  TESTING_RAISE_LEFTMOST_PIVOT
+ *  TESTING_MULTIPLY_ROW_BY_NONZERO
  */
-#define TESTING_RAISE_LEFTMOST_PIVOT
+#define TESTING_MULTIPLY_ROW_BY_NONZERO
 
 int main ()
 {
@@ -49,6 +50,25 @@ int main ()
 	printf("Raised Matrix:\n");
 	print_matrix(ROWS, COLUMNS, array_pointer);
 #endif /* TESTING_RAISE_LEFTMOST_PIVOT */
+
+#ifdef TESTING_MULTIPLY_ROW_BY_NONZERO
+	printf("Original Matrix:\n");
+	print_matrix(ROWS, COLUMNS, array_pointer);
+
+	float multiplied_row[COLUMNS];
+	float *multiplied_pointer;
+	multiplied_pointer = &multiplied_row[0];
+
+	printf("Multiplied row: ");
+	multiply_row_by_nonzero(ROWS, COLUMNS, array_pointer, 2,\
+							3.5, multiplied_pointer);
+	for(int i = 0; i < COLUMNS; ++i)
+	{
+		printf("%.1f ", multiplied_row[i]);
+	}
+	printf("\n");
+
+#endif /* TESTING_MULTIPLY_ROW_BY_NONZERO */
 
 	return (0);
 }

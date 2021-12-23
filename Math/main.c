@@ -2,8 +2,8 @@
 #include <malloc.h>
 #include "matrix.c"
 
-#define ROWS 3
-#define COLUMNS 3
+#define ROWS 4
+#define COLUMNS 5
 
 /* List with all TESTING_* variables:
  *  TESTING_SWAP
@@ -20,9 +20,10 @@
 int main ()
 {
 	float array[ROWS][COLUMNS] = {
-			{4, 5, 5},
-			{5, 5, 5},
-			{2, 1, 1} };
+			{0.8, -0.2, -0.2, -0.3, 0.5},
+			{-0.2, 0.9, -0.2, -0.3, 0.4},
+			{-0.3, -0.3, 0.8, -0.2, 0.3},
+			{-0.2, -0.2, -0.4, 0.8, 0} };
 	float *array_pointer = &array[0][0];
 	
 #ifdef TESTING_SWAP

@@ -71,3 +71,14 @@ void add_row1_into_row2(int rows, int columns, float *array, int row1, int row2)
 		array[(row2 * columns) + i] += array[(row1 * columns) + i];
 	}
 }
+
+float get_elimination_factor(int rows, int columns, float *array,\
+					int row1, int row2, int column)
+{
+	float number1, number2, factor;
+	number1 = array[(row1 * columns) + column];
+	number2 = array[(row2 * columns) + column];
+	factor = number1 / number2;
+
+	return factor;
+}

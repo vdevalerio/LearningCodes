@@ -13,6 +13,8 @@ void multiply_row_by_nonzero(int rows, int columns, float* matrix,\
 
 void add_row1_into_row2(int rows, int columns, float* matrix,\
 						int row1, int row2);
+float get_elimination_factor(int rows, int columns, float* matrix,\
+					int row1, int row2, int column);
 
 /* 	TODOs
  * 		gaussian elimination itself

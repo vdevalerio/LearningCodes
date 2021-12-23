@@ -3,7 +3,7 @@
 #include "matrix.c"
 
 #define ROWS 3
-#define COLUMNS 5
+#define COLUMNS 3
 
 /* List with all TESTING_* variables:
  *  TESTING_SWAP
@@ -11,15 +11,16 @@
  *  TESTING_RAISE_LEFTMOST_PIVOT
  *  TESTING_MULTIPLY_ROW_BY_NONZERO
  *  TESTING_ADD_ROW1_INTO_ROW2
+ *  TESTING_ELIMINATION_FACTOR
  */
-#define TESTING_ADD_ROW1_INTO_ROW2
+#define TESTING_ELIMINATION_FACTOR
 
 int main ()
 {
 	float array[ROWS][COLUMNS] = {
-			{0, 0, 0, 0, 1},
-			{0, 0, 3, 1, 3},
-			{1, 2, 3, 4, 5} };
+			{4, 5, 5},
+			{5, 5, 5},
+			{2, 1, 1} };
 	float *array_pointer = &array[0][0];
 	
 #ifdef TESTING_SWAP
@@ -82,5 +83,15 @@ int main ()
 
 #endif /* TESTING_ADD_ROW1_INTO_ROW2 */
 
+#ifdef TESTING_ELIMINATION_FACTOR
+	printf("Original Matrix:\n");
+	print_matrix(ROWS, COLUMNS, array_pointer);
+	
+	float factor = get_elimination_factor(ROWS,\
+			COLUMNS, array_pointer, 2, 1, 0);
+	printf("%.1f\n", factor);
+
+
+#endif /* TESTING_ELIMINATION_FACTOR */
 	return (0);
 }

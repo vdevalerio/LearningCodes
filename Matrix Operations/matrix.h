@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-void print_matrix(int rows, int columns, float* matrix);
 int get_row_pivot_index(int rows, int columns, float* matrix, int target_row);
 /* 	return row pivot index if row does not consist
  * 		of only zeros

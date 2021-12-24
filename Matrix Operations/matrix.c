@@ -2,27 +2,6 @@
 #include <stdarg.h>
 #include "matrix.h"
 
-void print_matrix(int rows, int columns, float *array)
-{
-	for(size_t i = 0; i < rows; ++i)
-	{
-		printf("|");
-		for(size_t j = 0; j < columns; ++j)
-		{
-			float current = array[(columns * i) + j];
-			if(current < 0)
-			{
-				printf("  %.3f", array[j + (columns * i)]);
-			}
-			else
-			{
-				printf("   %.3f", array[j + (columns * i)]);
-			}
-		}
-		printf("   |\n");
-	}
-}
-
 int get_row_pivot_index(int rows, int columns, float *array, int target_row)
 {
 	for(size_t i = 0; i < columns; ++i)

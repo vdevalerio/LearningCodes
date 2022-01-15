@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "matrix.c"
+#include "matrix_io.c"
 
 int main()
 {

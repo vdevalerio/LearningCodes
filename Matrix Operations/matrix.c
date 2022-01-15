@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdarg.h>
 #include "matrix.h"
 
 int get_row_pivot_index(int rows, int columns, float *array, int target_row)

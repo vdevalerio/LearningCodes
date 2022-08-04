@@ -16,7 +16,8 @@
  *  TESTING_ELIMINATION_FACTOR
  *  TESTING_GAUSSIAN_ELIMINATION
  */
-#define TESTING_GAUSSIAN_ELIMINATION
+/* #define TESTING_GAUSSIAN_ELIMINATION */
+
 
 int main ()
 {
@@ -25,8 +26,15 @@ int main ()
 			{-0.2, 0.9, -0.2, -0.3, 0.4},
 			{-0.3, -0.3, 0.8, -0.2, 0.3},
 			{-0.2, -0.2, -0.4, 0.8, 0} };
+	float array2[ROWS][COLUMNS] = {
+			{0.8, -0.2, -0.2, -0.3, 0.5},
+			{-0.2, 0.9, -0.2, -0.3, 0.4},
+			{-0.3, -0.3, 0.8, -0.2, 0.3},
+			{-0.2, -0.2, -0.4, 0.8, 0} };
+	if(array == array2)
+		printf("1");
 	float *array_pointer = &array[0][0];
-	
+
 #ifdef TESTING_SWAP
 	printf("Original Matrix:\n");
 	print_matrix(ROWS, COLUMNS, array_pointer);
@@ -103,7 +111,7 @@ int main ()
 #ifdef TESTING_ELIMINATION_FACTOR
 	printf("Original Matrix:\n");
 	print_matrix(ROWS, COLUMNS, array_pointer);
-	
+
 	float factor = get_elimination_factor(ROWS,\
 			COLUMNS, array_pointer, 2, 1, 0);
 	printf("%.1f\n", factor);
@@ -122,3 +130,4 @@ int main ()
 #endif /* TESTING_GAUSSIAN_ELIMINATION  */
 	return (0);
 }
+
